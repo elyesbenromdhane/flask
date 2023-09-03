@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('C:\Users\USER\Desktop\flask\templates\static\background.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Application Form</h1>
+    <form method="POST" action="/submit">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="married">Marital Status:</label>
+                <select id="married" name="married" required>
+                    <option value="1">Married</option>
+                    <option value="0">Not Married</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="dependents">Number of Dependents:</label>
+                <input type="number" id="dependents" name="dependents" required min="0" max="10" value="0" placeholder="0">
+            </div>
+            <br>
+
+            <div>
+                <label for="education">Education:</label>
+                <select id="education" name="education" required>
+                    <option value="1">Graduate</option>
+                    <option value="0">Not Graduate</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="self-employed">Self Employed:</label>
+                <select id="self-employed" name="self_employed" required>
+                    <option value="0">Self Employed</option>
+                    <option value="1">Not Self Employed</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Financial Information</legend>
+            <div>
+                <label for="applicant-income">Applicant's Monthly Income:</label>
+                <input type="number" step="any" id="applicant-income" name="applicant_income" required min="0" max="100000" value="0" placeholder="0">
+            </div>
+            <br>
+
+            <div>
+                <label for="coapplicant-income">Coapplicant's Monthly Income:</label>
+                <input type="number" step="any" id="coapplicant-income" name="coapplicant_income" required min="0" max="100000" value="0" placeholder="0">
+            </div>
+            <br>
+
+            <div>
+                <label for="loan-amount">Loan Amount Requested:</label>
+                <input type="number" step="any" id="loan-amount" name="loan_amount" required min="0" max="1000000" value="0" placeholder="0">
+            </div>
+            <br>
+
+            <div>
+                <label for="loan-term">Loan Term (Months):</label>
+                <input type="number" step="any" id="loan-term" name="loan_amount_term" required min="0" max="800" value="0" placeholder="0">
+            </div>
+        </fieldset>
+            <br>
+
+        <fieldset>
+            <legend>Credit and Property Information</legend>
+            <div>
+                <label for="credit_history">Credit History:</label>
+                <select id="credit_history" name="credit_history" required>
+                    <option value="0">Had a loan before</option>
+                    <option value="1">First time applying</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="property-area">Property Area:</label>
+                <select id="property-area" name="property_area" required>
+                    <option value="0">Rural</option>
+                    <option value="1">Semi Urban</option>
+                    <option value="2">Urban</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <div>
+            <input type="submit" value="Submit Application">
+        </div>
+    </form>
+</body>
+</html>
